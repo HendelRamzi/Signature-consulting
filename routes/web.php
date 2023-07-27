@@ -143,7 +143,7 @@ Route::prefix('service')->group(function(){
 
 Route::prefix('reference')->group(function(){
     /**
-     * * Service list
+     * * Reference list
      */
     Route::get('/', function(){
         return view('admin.reference.index');
@@ -152,7 +152,7 @@ Route::prefix('reference')->group(function(){
 
 
     /**
-     * * Refenrece creation
+     * * Reference creation
      */
     Route::get('/creation', function(){
         return view('admin.reference.create'); 
@@ -171,7 +171,7 @@ Route::prefix('reference')->group(function(){
 
 
     /**
-     * * Service edit
+     * * Reference edit
      */
     Route::get('/edit/{name}', function($name){
         $ref = Reference::where('name', $name)->first(); 
@@ -180,5 +180,25 @@ Route::prefix('reference')->group(function(){
         ]);
     })->name('admin.reference.edit');
 
+
+});
+
+
+Route::prefix('formulaire')->group(function(){
+    /**
+     * * Formulaire list
+     */
+    Route::get('/', function(){
+        return view('admin.form.index');
+    })->name('admin.form.index');
+
+
+
+    /**
+     * * Formulaire creation
+     */
+    Route::get('/creation', function(){
+        return view('admin.form.create'); 
+    })->name('admin.form.create');
 
 });
