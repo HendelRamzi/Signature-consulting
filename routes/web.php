@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Realisation;
+use App\Models\Reference;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,14 @@ Route::prefix('image')->group(function (){
             "Content-Disposition" => "inline"
         ];
         return Storage::download('/gallery//'.$image, $image, $headers);
+    });
+
+
+    Route::get('/load/references/{image}', function($image){
+        $headers = [
+            "Content-Disposition" => "inline"
+        ];
+        return Storage::download('/references//'.$image, $image, $headers);
     });
 
 });
@@ -132,12 +141,44 @@ Route::prefix('service')->group(function(){
 });
 
 
-Route::prefix('contact')->group(function(){
+Route::prefix('reference')->group(function(){
     /**
      * * Service list
      */
     Route::get('/', function(){
-        return view('admin.contact.index');
-    })->name('admin.contact.index');
+        return view('admin.reference.index');
+    })->name('admin.reference.index');
+
+
+
+    /**
+     * * Refenrece creation
+     */
+    Route::get('/creation', function(){
+        return view('admin.reference.create'); 
+    })->name('admin.reference.create');
+
+
+    /**
+     * * Reference details
+     */
+    Route::get('/{name}', function($name){
+        $ref = Reference::where('name', $name)->first(); 
+        return view('admin.reference.details', [
+            'ref' => $ref
+        ]);
+    })->name('admin.reference.details'); 
+
+
+    /**
+     * * Service edit
+     */
+    Route::get('/edit/{name}', function($name){
+        $ref = Reference::where('name', $name)->first(); 
+        return view('admin.reference.edit', [
+            'ref' => $ref
+        ]);
+    })->name('admin.reference.edit');
+
 
 });
