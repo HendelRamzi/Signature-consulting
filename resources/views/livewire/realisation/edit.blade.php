@@ -27,23 +27,26 @@
               <div class="card-body">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nom de la realisation</label>
-                    <input type="email" wire:model.defer="realisation.name" class="form-control" id="name" placeholder="Realisation 01">
+                    <input type="text" value="{{$realisation->name}}" wire:model="realisation.name" class="form-control" id="name" placeholder="Realisation 01">
                     @error('realisation.name') <span class="text-danger">{{ $message }}</span> @enderror
-
                 </div>
 
                 <div class="mb-3">
                     <label for="desc" class="form-label">Description de la realisation</label>
-                    <textarea type="email" wire:model.defer="realisation.desc" class="form-control" id="desc" placeholder="Description ici !"></textarea>
+                    <textarea  wire:model="realisation.desc" class="form-control" id="desc" placeholder="Description ici !">{{$realisation->desc}}</textarea>
                     @error('realisation.desc') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
 
                 <label for="service" class="form-label">Selectionnez le service</label><br>
                 <div class="mb-3">
                   <select  wire:model.defer="realisation.service_id" id="service" class="form-control">
-                    <option value="">Selectionnez le service associer</option>
                     @foreach ($services as $service)
-                      <option value="{{$service->id}}">{{$service->name}}</option> 
+                        @if ($service->id == $realisation->service->id)
+                            <option value="{{$service->id}}" selected>{{$service->name}}</option> 
+                        @else
+
+                        <option value="{{$service->id}}">{{$service->name}}</option> 
+                        @endif
                     @endforeach
                   </select>
                   @error('realisation.service_id') <span class="text-danger">{{ $message }}</span> @enderror
@@ -66,7 +69,7 @@
             <div class="card-body">
               <form class="text-center px-3 py-2"
                 wire:ignore>
-                  <input type="file" wire:model.="photo" id="thumbnail">
+                  <input type="file" name="thumb" wire:model.="photo" id="thumbnail">
               </form>
               @error('photo') <span class="text-danger">{{ $message }}</span> @enderror 
             </div>
@@ -118,8 +121,22 @@
 <script type="module">
   FilePond.registerPlugin(FilePondPluginImagePreview);
   const Thumbnail = document.getElementById('thumbnail')
+  
+  const url = "{{$realisation->thumb}}" ; 
+
   const post = FilePond.create(Thumbnail);
   post.setOptions({ 
+    credits	: false,
+    files : [
+      {
+        source : url.split("/")[1],
+        // set type to local to indicate an already uploaded file
+        options: {
+          type: 'local',
+        },
+
+      },
+    ],
     server: {
       process:(fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
           @this.upload('photo', file, load, error, progress)
@@ -127,6 +144,8 @@
       revert: (filename, load) => {
         @this.removeUpload('photo', filename, load)
       },
+      load : "/image/load/realisations/thumb/",
+      
     }
   });
 </script>
@@ -134,10 +153,21 @@
 <script type="module">
   FilePond.registerPlugin(FilePondPluginImagePreview);
   const gallery = document.getElementById('gallery')
+
   const post = FilePond.create(gallery, {
     maxFiles : 5,
     credits	: false, 
     allowMultiple : true,
+    files : [
+      @foreach($urls as $url)
+        {
+            source: "{{$url}}",
+            options: {
+                type: 'local'
+            }
+        },
+      @endforeach
+    ],
   });
   post.setOptions({ 
     server: {
@@ -147,14 +177,17 @@
       revert: (filename, load) => {
         @this.removeUpload('gallery', filename, load)
       },
+      load : "/image/load/gallery/", 
     }
   });
 </script>
 
 <script type="module">
-const editor = new EditorJS({ 
+    const content  = JSON.parse(@js($content)) 
+    const editor = new EditorJS({ 
   holder: 'content', 
   placeholder : "Ecrivez le contenu ici !",
+  data : content,
   tools : {
       header: {
         class: Header,
@@ -180,7 +213,8 @@ document.getElementById('save').addEventListener('click', (e)=>{
   // Handle the saved data
   editor.save().then((outputData) => {
     @this.content = JSON.stringify(outputData) ;
-    Livewire.emit('addRealisation')
+    @this.old_thumb = document.querySelector('input[name=thumb]').value
+    Livewire.emit('updateRealisation')
   }).catch((error) => {
     console.log('Saving failed: ', error)
   });

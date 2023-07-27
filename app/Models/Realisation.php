@@ -10,7 +10,7 @@ class Realisation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["name", "desc", "service_id"];
+    protected $fillable = ["name", "desc", "service_id", "content", "thumb"];
 
 
 
@@ -31,20 +31,6 @@ class Realisation extends Model
         }
     }
 
-
-
-    /**
-     * Update realisation to the database
-     */
-    public function update($realisation){
-        try{
-            $realisation->save(); 
-        }catch(\Exception $error){
-            return [
-                "error" => "Une erreur est survenu lors de la modification. Contactez les developpeurs"
-            ];
-        }
-    }
 
 
 

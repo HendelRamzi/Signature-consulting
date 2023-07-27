@@ -11,7 +11,7 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name", "desc", "icon"
+        "name", "desc", "icon", "content"
     ];
 
 
@@ -28,18 +28,7 @@ class Service extends Model
 
 
 
-    /**
-     * Update realisation to the database
-     */
-    public function update($service){
-        try{
-            $service->save(); 
-        }catch(\Exception $error){
-            return [
-                "error" => "Une erreur est survenu lors de la modification. Contactez les developpeurs"
-            ];
-        }
-    }
+
 
 
     /**
@@ -78,6 +67,8 @@ class Service extends Model
             ];
         }
      }
+
+
 
 
     public function realisations(){

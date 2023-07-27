@@ -23,12 +23,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Modifier réalisation : {{ $rea->name }} </h1>
+              <h1>Modifier service : {{ $service->name }} </h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item active">Modifier réalisation {{ $rea->name }} </li>
+                <li class="breadcrumb-item active">Modifier service {{ $service->name }} </li>
               </ol>
             </div>
           </div>
@@ -38,8 +38,8 @@
 
     <section class="content">
         <div class="container-fluid">
-            @livewire('realisation.edit', [
-              'realisation' => $rea
+            @livewire('services.edit', [
+              'service' => $service
             ])
         </div>
     </section>

@@ -2,6 +2,8 @@
 
 
 @push('custom-css')
+@livewireStyles
+
 @endpush
 
 
@@ -34,6 +36,22 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
+              <div class="row">
+                  @if (session()->has('success'))
+                  <div class="col-12">
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                  </div>
+                @endif
+                @if (session()->has('error'))
+                  <div class="col-12">
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                  </div>
+                @endif
+              </div>
                 @livewire('realisation.show')
             </div>
         </section>
@@ -49,4 +67,6 @@
 
 @push('custom-js')
 @vite(['resources/js/app.js'])
+@livewireScripts
+
 @endpush

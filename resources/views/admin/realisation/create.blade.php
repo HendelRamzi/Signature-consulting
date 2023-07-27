@@ -2,13 +2,14 @@
 
 
 @push('custom-css')
-@endpush
 @livewireStyles
 <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
 <link
     href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
     rel="stylesheet"
 />
+
+@endpush
 
 @section('content')
 
@@ -53,4 +54,7 @@
 <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
 @endpush

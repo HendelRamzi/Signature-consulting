@@ -3,16 +3,7 @@
 
 @push('custom-css')
 @livewireStyles
-<link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
-<link
-    href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-    rel="stylesheet"
-/>
-
 @endpush
-
-
-
 
 
 @section('content')
@@ -23,12 +14,13 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Modifier réalisation : {{ $rea->name }} </h1>
+              <h1>{{$service->name}}</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item active">Modifier réalisation {{ $rea->name }} </li>
+                <li class="breadcrumb-item active">Services</li>
+                <li class="breadcrumb-item active">{{$service->name}}</li>
               </ol>
             </div>
           </div>
@@ -38,8 +30,8 @@
 
     <section class="content">
         <div class="container-fluid">
-            @livewire('realisation.edit', [
-              'realisation' => $rea
+            @livewire('services.details', [
+                'service' => $service
             ])
         </div>
     </section>
@@ -53,11 +45,7 @@
 
 @push('custom-js')
 @vite(['resources/js/app.js'])
-
 @livewireScripts
-
-<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-<script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>

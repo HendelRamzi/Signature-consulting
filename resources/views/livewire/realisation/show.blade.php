@@ -1,7 +1,10 @@
 <!-- /.row -->
 <div class="row">
+    <div class="col-12 pb-3 d-flex justify-content-end">
+        <a href="{{route('admin.realisation.create')}}" class="btn btn-sm btn-success">Ajouter réalisation</a>
+    </div>
     <div class="col-12 pb-3">
-        <span class="badge text-bg-dark py-1">resultat (0)</span>
+        <span class="badge text-bg-dark py-1">resultat ({{count($realisations)}})</span>
         <span class="badge text-bg-warning py-1">Selected (0)</span>
     </div>
     <div class="col-12">
@@ -18,33 +21,40 @@
                     <th>Nom</th>
                     <th>Description</th>
                     <th>Status</th>
+                    <th>Nom service</th>
                     <th>date de creation</th>
                     <th>Créé par</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="">
-                    <td class="bg-white" ><input type="checkbox" name="" id=""></td>
-                    <td class="bg-white" ><a href="">Realisation 01</a></td>
-                    <td class="bg-white" >Lorem ipsum dolor sit amet.</td>
-                    <td class="bg-white" >publier</td>
-                    <td class="bg-white" >2023-07-25</td>
-                    <td class="bg-white" >Ramzi</td>
-                    <td class="bg-white" >
-                        <div class="dropdown-center">
-                            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Actions
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Consulter</a></li>
-                                <li><a class="dropdown-item" href="#">Modifier</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item bg-danger text-white" href="#">Supprimer</a></li>
-                            </ul>
-                            </div>
-                    </td>
-                </tr>
+
+                @foreach ($realisations as $realisation)
+                    <tr>
+                        <td class="bg-white" ><input type="checkbox" name="" id=""></td>
+                        <td class="bg-white" ><a href="">{{$realisation->name}}</a></td>
+                        <td class="bg-white" >{{$realisation->desc}}</td>
+                        <td class="bg-white" >Unknown</td>
+                        <td class="bg-white" >{{$realisation->service->name}}</td>
+                        <td class="bg-white" >{{$realisation->created_at}}</td>
+                        <td class="bg-white" >Unknown</td>
+                        <td class="bg-white" >
+                            <div class="dropdown-center">
+                                <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{route('admin.realisation.details', ['name' => $realisation->name])}}">Consulter</a></li>
+                                    <li><a class="dropdown-item" href="{{route('admin.realisation.edit', ['name' => $realisation->name])}}">Modifier</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item bg-danger text-white" wire:click="deleteRealisation({{$realisation->id}})">Supprimer</a></li>
+                                </ul>
+                                </div>
+                        </td>
+                    </tr>  
+                @endforeach
+
+
             </tbody>
             </table>
         </div>

@@ -2,27 +2,24 @@
 
 namespace App\Http\Livewire\Realisation;
 
-use App\Models\Realisation;
 use Livewire\Component;
 
-class Show extends Component
+class Details extends Component
 {
 
-    public $realisations ;
-
+    public $realisation ;
+    public $content ; 
     public function mount(){
-        $this->realisations = Realisation::all() ;
+        $this->content = $this->realisation->content;
     }
 
 
 
-    public function deleteRealisation($id){
+
+    public function deleteRealisation(){
         try{
-
-            $rea = Realisation::find($id); 
-
             // Delete the gallery images of the realisation
-            $gallery = $rea->images ; 
+            $gallery = $this->realisation->images ; 
             foreach($gallery as $img){
                 $img->delete(); 
             }
@@ -42,6 +39,6 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.realisation.show');
+        return view('livewire.realisation.details');
     }
 }
