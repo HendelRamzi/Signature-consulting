@@ -141,6 +141,45 @@ Route::prefix('service')->group(function(){
 });
 
 
+
+Route::prefix('domain')->group(function(){
+    /**
+     * * Service list
+     */
+    Route::get('/', function(){
+        return view('admin.domain.index');
+    })->name('admin.domain.index');
+
+    /**
+     * * Service creation
+     */
+    Route::get('/creation', function(){
+        return view('admin.domain.create');
+    })->name('admin.domain.create');
+
+    /**
+     * * Service details
+     */
+    Route::get('/{name}', function($name){
+        $service = Service::where('name', $name)->first(); 
+        return view('admin.domain.details', [
+            'service' => $service
+        ]);
+    })->name('admin.domain.details'); 
+
+    /**
+     * * Service edit
+     */
+    Route::get('/edit/{name}', function($name){
+        $service = Service::where('name', $name)->first(); 
+        return view('admin.domain.edit', [
+            'service' => $service
+        ]);
+    })->name('admin.domain.edit');
+
+});
+
+
 Route::prefix('reference')->group(function(){
     /**
      * * Reference list
