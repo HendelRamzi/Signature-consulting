@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Domain;
 use App\Models\Realisation;
 use App\Models\Reference;
 use App\Models\Service;
@@ -36,7 +37,14 @@ Route::prefix('image')->group(function (){
         return Storage::download('/services//'.$image, $image, $headers);
     })->name('image.load');
 
+    Route::get('/load/domain/{images}', function($image){
+        // dd($image); 
+        $headers = [
+            "Content-Disposition" => "inline"
+        ];
 
+        return Storage::download('/domains//'.$image, $image, $headers);
+    })->name('image.load');
 
 
     Route::get('/load/realisations/thumb/{image}', function($image){
@@ -144,36 +152,36 @@ Route::prefix('service')->group(function(){
 
 Route::prefix('domain')->group(function(){
     /**
-     * * Service list
+     * * Domain list
      */
     Route::get('/', function(){
         return view('admin.domain.index');
     })->name('admin.domain.index');
 
     /**
-     * * Service creation
+     * * Domain creation
      */
     Route::get('/creation', function(){
         return view('admin.domain.create');
     })->name('admin.domain.create');
 
     /**
-     * * Service details
+     * * Domain details
      */
     Route::get('/{name}', function($name){
-        $service = Service::where('name', $name)->first(); 
+        $domain = Domain::where('name', $name)->first(); 
         return view('admin.domain.details', [
-            'service' => $service
+            'domain' => $domain
         ]);
     })->name('admin.domain.details'); 
 
     /**
-     * * Service edit
+     * * Domain edit
      */
     Route::get('/edit/{name}', function($name){
-        $service = Service::where('name', $name)->first(); 
+        $domain = Domain::where('name', $name)->first(); 
         return view('admin.domain.edit', [
-            'service' => $service
+            'domain' => $domain
         ]);
     })->name('admin.domain.edit');
 

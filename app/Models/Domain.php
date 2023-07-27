@@ -10,7 +10,7 @@ class Domain extends Model
     use HasFactory;
 
     protected $fillable = [
-        "nom", "desc", "icon"
+        "nom", "desc", "icon", "domain"
     ];
 
 }

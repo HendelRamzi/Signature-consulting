@@ -1,22 +1,30 @@
 <?php
 
-namespace App\Http\Livewire\Services;
+namespace App\Http\Livewire\Domain;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Edit extends Component
 {
+
     use WithFileUploads;
 
-    public $service ; 
+    public $domain ; 
     public $content, $url ; 
     public $icon, $old_icon ; 
 
+    public function mount($domain){
+        $this->content = $domain->content ; 
+        $this->url = $domain->icon ; 
+    }
+
+
+
 
     protected $rules = [
-        'service.name' => "required|string",
-        "service.desc" => "required|string",
+        'domain.name' => "required|string",
+        "domain.desc" => "required|string",
 
         "icon" => "image:jpg,jpeg,png,svg|nullable",
         "old_icon" => "required|string",
@@ -24,37 +32,35 @@ class Edit extends Component
     ];
 
 
-
     protected $listeners = [
-        'updateService' => "updateService"
+        'updateDomain' => "updateDomain"
     ];
 
-    // Function handle event
-    public function updateService(){
-        $url = explode('/', $this->service->icon);
+    public function updateDomain(){
+        $url = explode('/', $this->domain->icon);
         $this->validate(); 
         try{
             if($this->old_icon != $url[1]){
                 
                 // get the content from $this->content
-                $this->service->content = $this->content;
+                $this->domain->content = $this->content;
     
                 // Handle the images saving process
                 $url = $this->icon->store('services');
-                $this->service->icon = $url ;
+                $this->domain->icon = $url ;
     
                 // Update the service model 
-                $this->service->save(); 
+                $this->domain->save(); 
     
     
            }else{
-                $this->service->content = $this->content; 
+                $this->domain->content = $this->content; 
     
                 // Update the service model 
-                $this->service->save(); 
+                $this->domain->save(); 
             }
 
-            session()->flash('success', "Le service a bien été modifier");
+            session()->flash('success', "Le domain a bien été modifier");
 
         }catch(\Exception $error){
             session()->flash('error', "Un problème est survenu. Contactez les developpeurs");
@@ -64,16 +70,9 @@ class Edit extends Component
 
 
 
-    public function mount($service){
-        $this->content = $service->content ; 
-        $this->url = $service->icon ; 
-    }
-
-
-
 
     public function render()
     {
-        return view('livewire.services.edit');
+        return view('livewire.domain.edit');
     }
 }

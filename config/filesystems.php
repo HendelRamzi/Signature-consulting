@@ -75,6 +75,7 @@ return [
         public_path('services') => storage_path('app/services'),
         public_path('gallery') => storage_path('app/gallery'),
         public_path('references') => storage_path('app/references'),
+        public_path('domains') => storage_path('app/domains'),
     ],
 
 ];
