@@ -15,7 +15,7 @@
     @endif
     <div class="col-12 d-flex justify-content-end mb-3">
       <button type="button" class="btn btn-sm btn-danger me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer</button>
-      <a class="btn btn-sm btn-primary" >Modifier</a>
+      <a class="btn btn-sm btn-primary" href="{{route('admin.realisation.edit', ['name' => $realisation->name])}}" >Modifier</a>
     </div>
 
     <div class="col-6">

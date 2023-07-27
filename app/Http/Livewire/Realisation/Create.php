@@ -45,7 +45,7 @@ class Create extends Component
         // Files validation
         "photo" => "required|image:jpg,jpeg,png,svg",
         "gallery" => "required",
-        "gallery.*" => "required|image:jpg,jpeg,png,svg",
+        "gallery.*" => "",
 
         // Properties validation
         "content" => "required|string"

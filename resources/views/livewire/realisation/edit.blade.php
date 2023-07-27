@@ -1,5 +1,10 @@
 <div class="row">
 
+
+  {{-- @dump($gallery)
+  @dump($old_gallery)
+ --}}
+
     @if (session()->has('success'))
       <div class="col-12">
         <div class="alert alert-success" role="alert">
@@ -69,7 +74,7 @@
             <div class="card-body">
               <form class="text-center px-3 py-2"
                 wire:ignore>
-                  <input type="file" name="thumb" wire:model.="photo" id="thumbnail">
+                  <input type="file" name="thumb" wire:model="photo" id="thumbnail">
               </form>
               @error('photo') <span class="text-danger">{{ $message }}</span> @enderror 
             </div>
@@ -102,7 +107,7 @@
           <div class="card-body">
             <form  class="text-center px-3 py-2"
               wire:ignore>
-                <input type="file" wire:model="gallery" id="gallery">
+                <input type="file" name="gallery" wire:model="gallery" id="gallery">
             </form>
             @error('gallery') <span class="text-danger">{{ $message }}</span> @enderror        
           </div>
@@ -113,7 +118,7 @@
 
   <div class="col-12 d-flex justify-content-end mb-3">
     <a  class="btn btn-secondary me-3">Annuler</a>
-    <button class="btn btn-primary" id="save">Créé</button>
+    <button class="btn btn-primary" id="save">Modifier</button>
   </div>
 
 
@@ -158,18 +163,19 @@
     maxFiles : 5,
     credits	: false, 
     allowMultiple : true,
+
+  });
+  post.setOptions({ 
     files : [
       @foreach($urls as $url)
         {
-            source: "{{$url}}",
-            options: {
-                type: 'local'
-            }
+          source: "{{$url}}",
+          options: {
+              type: 'local'
+          }
         },
       @endforeach
     ],
-  });
-  post.setOptions({ 
     server: {
       process:(fieldName, file, metadata, load, error, progress, abort, transfer, options) => {
           @this.upload('gallery', file, load, error, progress)
@@ -213,7 +219,17 @@ document.getElementById('save').addEventListener('click', (e)=>{
   // Handle the saved data
   editor.save().then((outputData) => {
     @this.content = JSON.stringify(outputData) ;
-    @this.old_thumb = document.querySelector('input[name=thumb]').value
+
+    const g = document.querySelectorAll('input[name=gallery]') ;
+    let a = [];  
+    for(let i = 0; i < g.length; i++){
+      a.push(g[i].value); 
+    }
+    @this.old_gallery = a
+
+    
+
+
     Livewire.emit('updateRealisation')
   }).catch((error) => {
     console.log('Saving failed: ', error)

@@ -1,8 +1,5 @@
 <!-- /.row -->
 <div class="row">
-    <div class="col-12 pb-3 d-flex justify-content-end">
-        <a href="{{route('admin.form.create')}}" class="btn btn-sm btn-success">Ajouter service</a>
-    </div>
     <div class="col-12 pb-3">
         <span class="badge text-bg-dark py-1">resultat ({{count($forms)}})</span>
         <span class="badge text-bg-warning py-1">Selected (0)</span>
