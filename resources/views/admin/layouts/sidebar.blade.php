@@ -31,18 +31,70 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-header">CONTROLE</li>
+
+
+            <li class="nav-header">LES REALISATIONS</li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('admin.realisation.index')}}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
-                        Realisation
-                        <i class="right fas fa-angle-left"></i>
+                        Liste des realisation
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+              <a href="{{route('admin.realisation.create')}}" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                      Créé une réalisation
+                  </p>
+              </a>
+          </li>
+
+
+
+          <li class="nav-header">LES SERVICES</li>
+          <li class="nav-item">
+              <a href="{{route('admin.services.index')}}" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                      Liste des services
+                  </p>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.services.create')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Créé un service
+                </p>
+            </a>
+        </li>
+
+
+        
+        <li class="nav-header">LES REFERENCES</li>
+        <li class="nav-item">
+            <a href="{{route('admin.reference.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Liste des réferences
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{route('admin.reference.create')}}" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                  Créé une réference
+              </p>
+          </a>
+      </li>
+
+
+
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
