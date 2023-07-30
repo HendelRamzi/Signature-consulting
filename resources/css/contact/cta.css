@@ -1,0 +1,39 @@
+
+.contact-desc{
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.contact-desc h1 {
+    font-size: 4rem ;
+    font-family: 'eras';
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+.contact-desc h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'eras';
+}
+
+.contact-desc a {
+    text-decoration: none;
+    background: none ;
+    border: 2px solid #e9e9c3;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    font-family: "artico-bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e9e9c3;
+    transition: all .5s ease-in-out;
+}
+
+.contact-desc a:hover{
+    background-color: #e9e9c3;
+    color: #3b7d7d;
+    font-weight: bold
+}

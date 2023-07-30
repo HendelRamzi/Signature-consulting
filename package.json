@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "alpinejs": "^3.12.3",
+        "countup.js": "^2.7.0",
         "filepond": "^4.30.4"
     }
 }

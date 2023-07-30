@@ -1,0 +1,32 @@
+.navbar{
+    background-color: #e9e9c3 !important;
+}
+
+
+
+.nav-item{
+    padding: 0px 1.5rem !important;
+    color: #3b7d7d;
+}
+
+.nav-item span{
+    margin: 0;
+    font-size: .6rem;
+    font-family: "artico-bold";
+
+}
+
+.nav-item a {
+    margin: 0;
+    text-decoration: none;
+    color: #3b7d7d;
+    font-family: "artico-bold";
+    font-size: 1rem;
+}
+
+
+.navbar-brand{
+    color: #ffd770;
+    font-family: "artico-bold";
+    font-size: 2rem;
+}

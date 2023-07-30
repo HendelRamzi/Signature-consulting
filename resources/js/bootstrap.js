@@ -1,5 +1,9 @@
 import 'bootstrap';
-
+import.meta.glob([
+    '../svg/**',
+    '../imgs/**',
+    '../fonts/**',
+  ]);
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

@@ -1,0 +1,336 @@
+
+
+.navbar{
+    background-color: #e9e9c3;
+    /* border-bottom: solid 3px #ffd770; */
+}
+
+
+
+.nav-item{
+    padding: 0px 1.5rem !important;
+    color: #3b7d7d;
+}
+
+.nav-item span{
+    margin: 0;
+    font-size: .6rem;
+    font-family: "artico-bold";
+
+}
+
+.nav-item a {
+    margin: 0;
+    text-decoration: none;
+    color: #3b7d7d;
+    font-family: "artico-bold";
+    font-size: 1rem;
+}
+
+
+.navbar-brand{
+    color: #ffd770;
+    font-family: "artico-bold";
+    font-size: 2rem;
+}
+
+
+/* 
+----------------------------------------------------
+* START :  BANNER STYLE
+----------------------------------------------------
+*/
+
+.banner_section{
+    padding-top: 30px;
+}
+
+
+.banner_text {
+    padding: 4rem 0px;
+
+}
+
+.banner_text h3 {
+    font-family: "goldbill";
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.banner_text h1{
+    font-family: "eras";
+    font-size: 2rem;
+
+    color: #e9e9c3;
+    text-align: center;
+    /* line-height: 90px; */
+    letter-spacing: 1px;
+    overflow-wrap: break-word;
+}
+
+
+/* 
+----------------------------------------------------
+* END :  BANNER STYLE
+----------------------------------------------------
+*/
+
+
+
+
+
+/* 
+----------------------------------------------------
+* START :  MODULE SECTION STYLE
+----------------------------------------------------
+*/
+
+
+
+.swiper-wrapper{
+    transition-timing-function: linear;
+}
+
+.swiper-slide  {
+    width: 100% !important;
+    /* padding: 3rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    max-width: 590px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+
+.divider{
+    height: 2px;
+    background-color: #3b7d7d7c;
+}
+
+.module_desc{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    
+}
+
+.module_desc .img_div {
+    width: calc( (2rem * 1.6 ) * 2 );
+    height: calc(  (2rem * 1.6 ) * 2  )  ;
+    border: solid 2px #3b7d7d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 50px;
+}
+
+.module_desc img{
+    /* fill: #3b7d7d; */
+    width : calc(2rem * 1.6)
+}
+
+.module_desc h1 {
+    font-size: 2rem;
+    font-family: "artico-bold";
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3b7d7d;
+    
+}
+
+
+.title_under{
+    height: 5px;
+    width: 100px;
+    background-color: #a91414c3;
+    margin-bottom: 20px;
+}
+
+.module_desc p {
+    max-width: 50ch;
+    color: #00000080;
+    line-height: 1.75rem;
+    font-family: "eras";
+
+}
+
+/* 
+----------------------------------------------------
+* END :  MODULE SECTION STYLE
+----------------------------------------------------
+*/
+
+
+
+
+
+/* Reference section */
+
+.ref-titles {
+    padding: 10px;
+}
+
+.ref-titles h3{
+    font-size: 13px;
+    font-family: 'eras';
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #3b7d7d;
+    letter-spacing: 5px;
+}
+
+.ref-titles h1 {
+    font-size: 46px;
+    font-family: 'eras';
+    font-weight: 800;
+    color: #3b7d7d;
+    margin-top: 10px;
+}
+
+.ref-item{
+    display: flex;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.ref-item img{
+    display: block;
+    width: 100% !important;
+    max-width: 200px !important;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+
+
+
+.contact-desc{
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.contact-desc h1 {
+    font-size: 4rem ;
+    font-family: 'eras';
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+.contact-desc h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'eras';
+}
+
+.contact-desc a {
+    text-decoration: none;
+    background: none ;
+    border: 2px solid #e9e9c3;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    font-family: "artico-bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e9e9c3;
+    transition: all .5s ease-in-out;
+}
+
+.contact-desc a:hover{
+    background-color: #e9e9c3;
+    color: #3b7d7d;
+    font-weight: bold
+}
+
+
+
+
+/* Tablet size */
+@media only screen and (min-width : 800px){
+
+}
+
+
+/* Desktop size */
+@media only screen and (min-width: 1200px){
+
+    
+/* 
+----------------------------------------------------
+* START :  BANNER STYLE
+----------------------------------------------------
+*/
+
+.banner_section{
+    padding-top: 30px;
+}
+
+
+.banner_text {
+    padding: 8rem 8rem;
+
+}
+
+.banner_text h3 {
+    font-family: "goldbill";
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.banner_text h1{
+    font-family: "eras";
+    font-size: 72px;
+
+    color: #e9e9c3;
+    text-align: center;
+    line-height: 90px;
+    letter-spacing: -2px;
+    overflow-wrap: break-word;
+}
+
+
+/* 
+----------------------------------------------------
+* END :  BANNER STYLE
+----------------------------------------------------
+*/
+
+.module_desc{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+    padding-top: 0px;
+}
+
+
+
+
+}

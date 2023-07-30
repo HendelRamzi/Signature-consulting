@@ -15,6 +15,36 @@ export default defineConfig({
                 "resources/js/admin/adminlte.js",
 
 
+                // Website styles
+                    // Header style
+                    "resources/css/headers/header.css",
+                    "resources/css/headers/header2.css",
+                    
+                    // Footer style
+                    "resources/css/footers/style.css",
+
+                    // Agence style
+                    "resources/css/agence/style.css",
+
+                    // Contact style
+                    "resources/css/contact/style.css",
+                    "resources/css/contact/cta.css",
+
+                    // Service style
+                    "resources/css/service/style.css",
+
+                    // Portfolio style
+                    "resources/css/portfolio/style.css",
+
+                    // reference style
+                    "resources/css/reference/style.css",
+
+                    // 360 style
+                    "resources/css/360/style.css",
+   
+       
+
+
             ],
             refresh: true,
         }),

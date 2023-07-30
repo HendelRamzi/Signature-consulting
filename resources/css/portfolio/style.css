@@ -1,0 +1,188 @@
+
+.navbar{
+    background-color: #e9e9c3 !important;
+}
+
+
+
+.nav-item{
+    padding: 0px 1.5rem !important;
+    color: #3b7d7d;
+}
+
+.nav-item span{
+    margin: 0;
+    font-size: .6rem;
+    font-family: "artico-bold";
+
+}
+
+.nav-item a {
+    margin: 0;
+    text-decoration: none;
+    color: #3b7d7d;
+    font-family: "artico-bold";
+    font-size: 1rem;
+}
+
+
+.navbar-brand{
+    color: #ffd770;
+    font-family: "artico-bold";
+    font-size: 2rem;
+}
+
+
+
+/* 
+----------------------------------------------------
+* START :  BANNER STYLE
+----------------------------------------------------
+*/
+
+/* .banner_section{
+    padding-top: 30px;
+} */
+
+
+.banner_text {
+    padding: 8rem 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.banner_text h3 {
+    font-family: "goldbill";
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.banner_text h1{
+    font-family: "eras";
+    font-size: 2rem;
+
+    color: #e9e9c3;
+    text-align: center;
+    letter-spacing: 2px;
+    max-width: 50ch;
+}
+
+
+/* 
+----------------------------------------------------
+* END :  BANNER STYLE
+----------------------------------------------------
+*/
+
+.no-padding{
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rea-image {
+    display: block;
+    width: 100%;
+    max-width: 449px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-figure{
+    position: relative;
+}
+
+
+
+
+.img-caption{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.636);
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+
+.img-caption:hover {
+    opacity: 1;
+    
+}
+
+
+.img-caption h2 {
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: "goldbill";
+    letter-spacing: 3px;
+    transition: tranform .5s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.contact-desc{
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.contact-desc h1 {
+    font-size: 4rem ;
+    font-family: 'eras';
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+.contact-desc h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'eras';
+}
+
+.contact-desc button {
+    background: none ;
+    border: 2px solid #e9e9c3;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    font-family: "artico-bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e9e9c3;
+    transition: all .5s ease-in-out;
+}
+
+.contact-desc button:hover{
+    background-color: #e9e9c3;
+    color: #3b7d7d;
+    font-weight: bold
+}
+

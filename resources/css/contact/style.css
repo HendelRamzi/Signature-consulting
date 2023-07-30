@@ -1,0 +1,203 @@
+
+
+
+/* 
+----------------------------------------------------
+* START :  BANNER STYLE
+----------------------------------------------------
+*/
+
+.banner_section{
+    padding-top: 30px;
+}
+
+
+.banner_text {
+    padding: 4rem 0px;
+
+}
+
+.banner_text h3 {
+    font-family: "goldbill";
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.banner_text h1{
+    font-family: "eras";
+    font-size: 2rem;
+
+    color: #e9e9c3;
+    text-align: center;
+    /* line-height: 90px; */
+    letter-spacing: 1px;
+    overflow-wrap: break-word;
+}
+
+
+
+/* 
+----------------------------------------------------
+* END :  BANNER STYLE
+----------------------------------------------------
+*/
+
+
+.contact-title{
+    padding-bottom: 4rem;
+    text-align: center;
+    color: #e9e9c3;
+
+}
+
+
+.contact-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #ffd770;
+    padding: 2rem;
+}
+
+.contact-item:last-child{
+    border: none;
+}
+
+.contact-item .icon {
+    margin-bottom: 2rem;
+}
+.contact-item h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffd770;
+    margin-bottom: 1rem;
+}
+
+.contact-item  p {
+    color: #e9e9c3;
+    font-family: "eras";
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+
+
+.form-title{
+    text-align: center;
+}
+
+.form-title h1{
+    margin-bottom: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+
+.form-title h2{
+    letter-spacing: 3px;
+}
+
+.form-title h1, .form-title h2 {
+    font-size: 1rem;
+    color: #e9e9c3;
+    font-family: "goldbill";
+    /* letter-spacing: 7px; */
+    text-transform: uppercase;
+}
+
+
+
+.formulaire * {
+    background-color: #e9e9c3;
+}
+
+.form-content button {
+    margin-top: 1rem;
+}
+
+
+.button {
+    background: none ;
+    border: 2px solid #e9e9c3;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    font-family: "artico-bold";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #e9e9c3;
+    transition: all .5s ease-in-out;
+}
+
+.button:hover {
+    border: 2px solid #e9e9c3;
+    color: #3b7d7d;
+    background-color: #e9e9c3;
+}
+
+
+
+
+
+/* Tablet size */
+@media only screen and (min-width : 800px){
+
+}
+
+
+/* Desktop size */
+@media only screen and (min-width: 1200px){
+
+    
+/* 
+----------------------------------------------------
+* START :  BANNER STYLE
+----------------------------------------------------
+*/
+
+.banner_section{
+    padding-top: 30px;
+}
+
+
+.banner_text {
+    padding: 8rem 8rem;
+
+}
+
+.banner_text h3 {
+    font-family: "goldbill";
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: #e9e9c3;
+    text-align: center;
+}
+
+.banner_text h1{
+    font-family: "eras";
+    font-size: 72px;
+    max-width: 30ch;
+    color: #e9e9c3;
+    text-align: center;
+    line-height: 90px;
+    letter-spacing: -2px;
+    overflow-wrap: break-word;
+}
+
+
+/* 
+----------------------------------------------------
+* END :  BANNER STYLE
+----------------------------------------------------
+*/
+
+
+
+}
